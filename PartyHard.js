@@ -40,7 +40,8 @@ function ponlosvideos() {
     var name = document.createElement('p');
     iframe.width = 560;
     iframe.height = 315;
-    iframe.src = 'https://www.youtube.com/embed/' + Links[i].substring(32,Links[i].length);
+    if (Links[i].substring(0,29) == "https://www.youtube.com/watch") iframe.src = 'https://www.youtube.com/embed/' + Links[i].substring(32,Links[i].length);
+    else iframe.src = 'https://www.youtube.com/embed/' + Links[i].substring(17,Links[i].length)
     iframe.frameborder = 0;
     iframe.allowfullscreen;
     var t = document.createTextNode(Names[i]);
@@ -58,7 +59,7 @@ function send() {
        name: document.getElementById("name").value,
        link: document.getElementById("link").value
      }
-     if (data.link.substring(0,29) == "https://www.youtube.com/watch") shit = false;
+     if (data.link.substring(0,29) == "https://www.youtube.com/watch" || data.link.substring(0,16) == "https://youtu.be") shit = false;
      for (var i = 0; i < Links.length; i++) {
        if (data.link == Links[i]) shit = true;
        if (data.name == Names[i]) shit = true;
