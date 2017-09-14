@@ -1,0 +1,65 @@
+
+span.button {
+	position: fixed;
+	top: 1%;
+	left: 1%;
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	background-color: white;
+}
+
+div.activeblock {
+	position: fixed;
+	top: 1%;
+	width: 100px;
+	height: 100px;
+}
+
+div.activeblock:hover + span.button,
+span.button:hover {
+	position: fixed;
+	top: 1%;
+	left: 1%;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	background-color: gray;
+}
+
+span.button:active + div.show {
+	border-radius: 0%;
+	position: fixed;
+	top: 1%;
+	left: 0%;
+	width: 200px;
+	height: 90%;
+	background-color: gray;
+	display: block;
+}
+
+div.show {
+	display: none;
+}
+
+div.show:hover {
+	border-radius: 0%;
+	position: fixed;
+	top: 1%;
+	left: 0%;
+	width: 200px;
+	height: 90%;
+	background-color: gray;
+	display: block;
+}
+
+body {
+	background-color: #1C1F32;
+}
+
+canvas {
+	margin: auto;
+	display: block;
+}
+
+/* ©Javi */
