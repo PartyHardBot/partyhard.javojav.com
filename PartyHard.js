@@ -12,21 +12,21 @@ function hola() {
   };
   firebase.initializeApp(config);
    var database = firebase.database();
-   var ref = database.ref('songs');
+   var ref = database.ref('videos');
    ref.on('value', gotData, function(err) {});
 }
 
 function gotData(data) {
   Names = [];
   Links = [];
-  var songs = data.val();
-  var keys = Object.keys(songs);
+  var videos = data.val();
+  var keys = Object.keys(videos);
   console.log(keys);
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
-    Names.push(songs[k].name);
-    Links.push(songs[k].link);
-    console.log(songs[k].name,songs[k].link);
+    Names.push(videos[k].name);
+    Links.push(videos[k].link);
+    console.log(videos[k].name,songs[k].link);
   }
   if (update = true) {
     ponlosvideos();
