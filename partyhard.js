@@ -6,6 +6,7 @@ firebase.initializeApp({
 });
 
 const songsRef = firebase.database().ref('songs');
+const storageRef = firebase.storage().ref();
 
 const videos = new Vue({
   el: '#videos',
@@ -16,6 +17,7 @@ const videos = new Vue({
 
 songsRef.on('value', data => {
   videos.videos = data.val();
+  console.log(Object.keys(data.val()).length);
 }, err => {
   console.log(err);
 });
@@ -43,4 +45,17 @@ function sendYoutube() {
   }, err => {
     console.log(err);
   })
+}
+
+function sendFile() {
+  const file = document.getElementById('file').files[0];
+
+  storageRef.child(file.name).put(file).then(snapshot => {
+    storageRef.child(file.name).getDownloadURL().then(url => {
+      songsRef.push({
+        name: file.name.replace(/\..*/, ''),
+        id: url
+      });
+    });
+  });
 }

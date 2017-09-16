@@ -37,7 +37,10 @@
   <div align="center" id="videos">
     <div v-for="vid in videos">
       <p>{{vid.name}}</p>
-      <iframe :src="'https://www.youtube.com/embed/' + vid.id" width="560" height="315"></iframe>
+      <iframe v-if="vid.id.length === 11" :src="'https://www.youtube.com/embed/' + vid.id" width="560" height="315"></iframe>
+      <video v-else controls width="560" height="315">
+        <source :src="vid.id">
+      </video>
     </div>
   </div>
 
@@ -45,6 +48,11 @@
     <input class="name" type="text" placeholder="Name" id="name"/>
     <input class="link" type="text" placeholder="Link" id="link"/>
     <button class="sub" onclick="sendYoutube()">Send</button>
+  </div>
+
+  <div align="center">
+    <input class="name" type="file" accept="video/*" id="file"/>
+    <button class="sub" onclick="sendFile()">Send</button>
   </div>
 
   <div class="activeblock"></div>
