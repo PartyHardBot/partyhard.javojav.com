@@ -5,6 +5,7 @@
 
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
   <script src="https://vuejs.org/js/vue.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <link href="/style.css" rel="stylesheet">
   <link href="/layout.css" rel="stylesheet">
@@ -50,9 +51,10 @@
     <button class="sub" onclick="sendYoutube()">Send</button>
   </div>
 
-  <div align="center">
-    <input class="name" type="file" accept="video/*" id="file"/>
-    <button class="sub" onclick="sendFile()">Send</button>
+  <div align="center" class="selvideodiv">
+    <input class="selvideo" type="file" accept="video/*" id="file"/>
+    <label for="file" class="selectfilebutton" id="uploadfile">Upload a Video &#8679 </label>
+    <button onclick="sendFile()" id="sendvideo" >Send</button>
   </div>
 
   <div class="activeblock"></div>

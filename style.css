@@ -57,23 +57,73 @@ p {
 
 .name {
   width:186px;
-  font-size: 15px;
-  height:5vh;
+  font-size: 20px;
+  height:35px;
   font-family: 'Rajdhani', sans-serif;
 }
 
 .link {
   width:286px;
-  font-size: 15px;
-  height:5vh;
+  font-size: 20px;
+  height:35px;
   font-family: 'Rajdhani', sans-serif;
 }
 
 
 .sub {
   width:86px;
-  height:5vh;
-  font-size: 15px;
+  height:41px;
+  font-size: 20px;
   font-family: 'Rajdhani', sans-serif;
+}
+
+
+.selvideo {
+   display:none;
+}
+
+.selvideodiv {
+	margin: auto;
+	display: block;
+	width:400px;
+	height:5vh;
+}
+
+#sendvideo {
+	top: 5px;
+	position:relative;
+	width:159px;
+	height:35px;
+  font-size: 20px;
+	font-family: 'Rajdhani', sans-serif;
+	display: none;
+}
+
+.selectfilebutton {
+	border-style:solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	width:186px;
+	position:relative;
+	top: 10px;
+	padding:5px;
+	font-size: 20px;
+	color: black;
+	background-color: #F2F2F2;
+	font-family: 'Rajdhani', sans-serif;
+}
+
+.selectfilebutton:active {
+	border-style:solid;
+	border-color: #BDBDBD;
+	border-width: 1px;
+	width:186px;
+	position:relative;
+	top: 10px;
+	padding:5px;
+	font-size: 20px;
+	color: black;
+	background-color: #D8D8D8;
+	font-family: 'Rajdhani', sans-serif;
 }
 /* ©Javi */

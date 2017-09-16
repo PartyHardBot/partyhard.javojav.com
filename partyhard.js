@@ -47,8 +47,18 @@ function sendYoutube() {
   })
 }
 
+$(document).ready(function(){
+  $("#file").change(function(){
+      document.getElementById("uploadfile").style.display = "none";
+      document.getElementById("sendvideo").style.display = "block";
+  });
+});
+
 function sendFile() {
   const file = document.getElementById('file').files[0];
+
+  document.getElementById("uploadfile").style.display = "block";
+  document.getElementById("sendvideo").style.display = "none";
 
   storageRef.child(file.name).put(file).then(snapshot => {
     storageRef.child(file.name).getDownloadURL().then(url => {
