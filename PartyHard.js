@@ -26,7 +26,7 @@ function gotData(data) {
     var k = keys[i];
     Names.push(videos[k].name);
     Links.push(videos[k].link);
-    console.log(videos[k].name,songs[k].link);
+    console.log(videos[k].name,videos[k].link);
   }
   if (update = true) {
     ponlosvideos();
@@ -54,7 +54,7 @@ function ponlosvideos() {
 function send() {
   var database = firebase.database();
   var shit = true;
-  var ref = database.ref('songs');
+  var ref = database.ref('videos');
   var data = {
        name: document.getElementById("name").value,
        link: document.getElementById("link").value
