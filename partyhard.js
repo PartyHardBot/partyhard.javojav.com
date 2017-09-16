@@ -57,7 +57,7 @@ $(document).ready(function(){
 function sendFile() {
   const file = document.getElementById('file').files[0];
 
-  document.getElementById("uploadfile").style.display = "block";
+  document.getElementById("uploadfile").style.display = "inline";
   document.getElementById("sendvideo").style.display = "none";
 
   storageRef.child(file.name).put(file).then(snapshot => {
