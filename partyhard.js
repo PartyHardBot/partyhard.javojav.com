@@ -23,28 +23,32 @@ songsRef.on('value', data => {
 });
 
 function sendYoutube() {
-  const name = document.getElementById('name').value;
-  const id = document.getElementById('link').value.slice(-11);
+  if (document.getElementById('link').value.substring(0,29) == "https://www.youtube.com/watch" || document.getElementById('link').value.substring(0,16) == "https://youtu.be" && document.getElementById('name').value != "") {
+    const name = document.getElementById('name').value;
+    const id = document.getElementById('link').value.slice(-11);
 
-  songsRef.once('value', data => {
-    let alreadyExists = false;
+    songsRef.once('value', data => {
+      let alreadyExists = false;
 
-    for (var i in data.val()) {
-      if (name === data.val()[i].name || id === data.val()[i].id) {
-        alreadyExists = true;
-        break;
+      for (var i in data.val()) {
+        if (name === data.val()[i].name || id === data.val()[i].id) {
+          alreadyExists = true;
+          break;
+        }
       }
-    }
 
-    if (!alreadyExists) {
-      songsRef.push({
-        name,
-        id
-      });
-    }
-  }, err => {
-    console.log(err);
-  })
+      if (!alreadyExists) {
+        document.getElementById('name').value = "";
+        document.getElementById('link').value = "";
+        songsRef.push({
+          name,
+          id
+        });
+      }
+    }, err => {
+      console.log(err);
+    })
+  }
 }
 
 $(document).ready(function(){
