@@ -35,6 +35,7 @@ span.button:active + div.show {
 	width: 200px;
 	height: 90%;
 	background-color: gray;
+	overflow: scroll;
 	display: block;
 }
 
@@ -50,7 +51,13 @@ div.show:hover {
 	width: 200px;
 	height: 90%;
 	background-color: gray;
+	overflow: scroll;
 	display: block;
+}
+
+
+.separador {
+	margin:15px;
 }
 
 body {
