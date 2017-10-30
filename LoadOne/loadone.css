@@ -1,0 +1,40 @@
+.last {
+  position: absolute;
+  width:75px;
+  height:75px;
+  font-family: 'Rajdhani', sans-serif;
+  left: 0;
+  font-size: 60px;
+  display: none;
+}
+
+.next {
+  position: absolute;
+  width:75px;
+  height:75px;
+  font-family: 'Rajdhani', sans-serif;
+  right: 0;
+  font-size: 60px;
+}
+
+.random {
+  position: absolute;
+  left: 100px;
+  width:75px;
+  height:75px;
+  user-select: none;
+}
+
+.random img {
+  margin-top: 5px;
+}
+
+
+.nextlast {
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  height:  75px;
+  width: 275px;
+}
+/* ©Javi */
