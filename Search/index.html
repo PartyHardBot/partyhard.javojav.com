@@ -3,7 +3,11 @@
   <head>
     <title>Party Hard</title>
 
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link href="/style.css" rel="stylesheet">
+    <link href="search.css" rel="stylesheet">
     <link href="/layout.css" rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100069975-3"></script>
@@ -15,6 +19,15 @@
     gtag('config', 'UA-100069975-3');
     </script>
 
+
+
+    <script type="text/javascript">
+    function setup() {
+      var P = "©Javi " + year();
+      document.getElementById("c").innerHTML = P;
+    }
+    </script>
+
     <link rel="icon" href="/favicon.ico" type="image/ico">
   </head>
 
@@ -24,12 +37,12 @@
     </div>
 
     <div align="center">
-      <a href="LoadOne" style="background-color: gray;">Display only one song</a>
       <p></p>
-      <a href="search" style="background-color: gray;">Serach</a>
-      <p></p>
-      <a href="LoadAll" style="background-color: gray;">Display all songs</a>
+      <input class="search" type="text" placeholder="Search" id="search"/>
+      <button class="sub" onclick="search()">Search</button>
     </div>
+
+    <div align="center" id="videos"></div>
 
     <div class="activeblock"></div>
 
@@ -62,5 +75,9 @@
       <p class="separador"></p>
       <a style="background-color: #0FDADA; font-size: 25px;" href="http://partyhard.javojav.me" class="pressed">Party Hard</a>
     </div>
+
+    <div id="c" class="cp"></div>
+
+    <script src="partyhard.js" type="text/javascript"></script>
   </body>
 </html>
